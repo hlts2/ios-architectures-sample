@@ -1,6 +1,6 @@
 # iOS Architectures
 
-- [] MVC
+- [ ] MVC
 - [x] MVP
-- [] MVVM
-- [] Clean Architecture
+- [ ] MVVM
+- [ ] Clean Architecture
