@@ -28,6 +28,13 @@ class SearchVCPresenter: ISearchVCPresenter {
     }
     
     func searchRepositoriesList(keyword: String) {
+        
+        if keyword == "" {
+            self.repositories.removeAll()
+            self.viewInput.tableReflesh()
+            return
+        }
+        
         githubItemRepository.fetchRepositories(keyword) { data in
             DispatchQueue.main.async {
                 self.repositories = data
