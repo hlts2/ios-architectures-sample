@@ -29,8 +29,10 @@ class SearchVCPresenter: ISearchVCPresenter {
     
     func searchRepositoriesList(keyword: String) {
         githubItemRepository.fetchRepositories(keyword) { data in
-            self.repositories = data
-            self.viewInput.tableReflesh()
+            DispatchQueue.main.async {
+                self.repositories = data
+                self.viewInput.tableReflesh()
+            }
         }
     }
     
