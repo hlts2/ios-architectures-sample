@@ -7,7 +7,7 @@ protocol ISearchVC {
 
 class SearchViewController: UIViewController {
     
-    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var searchBar: CustomSearchBar!
     @IBOutlet weak var repositoryList: RepositoryTable!
     fileprivate lazy var presenter: ISearchVCPresenter = {
         return SearchVCPresenter(viewInput: self)
@@ -37,7 +37,7 @@ class SearchViewController: UIViewController {
 
 extension SearchViewController: ISearchVC {
     func showCancelButtonIntoSearchBar() {
-        self.searchBar.showsCancelButton = true
+        self.searchBar.searchOn()
     }
     
     func tableReflesh() {
@@ -72,16 +72,10 @@ extension SearchViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         self.presenter.searchRepositoriesList(keyword: searchBar.text!)
-        hiddenKeyboard()
+        self.searchBar.searchOff()
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        hiddenKeyboard()
+        self.searchBar.searchOff()
     }
-    
-    func hiddenKeyboard() {
-        self.searchBar.showsCancelButton = false
-        self.searchBar.resignFirstResponder()
-    }
-    
 }
