@@ -3,8 +3,8 @@
 - [x] MVP
 
 ## TODO
-- [  ] MVC
-- [  ] MVVM
-- [  ] MVVM + RxSwift
-- [  ] VIPPER
-- [  ] Clean Architecture
+- [ ] MVC
+- [ ] MVVM
+- [ ] MVVM + RxSwift
+- [ ] VIPPER
+- [ ] Clean Architecture
