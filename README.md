@@ -1,6 +1,10 @@
 # iOS Architectures
 
-- [ ] MVC
 - [x] MVP
-- [ ] MVVM
-- [ ] Clean Architecture
+
+## TODO
+- [  ] MVC
+- [  ] MVVM
+- [  ] MVVM + RxSwift
+- [  ] VIPPER
+- [  ] Clean Architecture
